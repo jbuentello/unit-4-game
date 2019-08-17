@@ -6,14 +6,12 @@ var lastNum = 0;
 var resetGame = function () {
     $(".crystals").empty();
 
+    randomResult = Math.floor(Math.random() * 101 ) + 19;
 
-randomResult = Math.floor(Math.random() * 101 ) + 19;
-console.log(randomResult);
 $("#result").html('Random Result: ' + randomResult);
 
 for(var i = 0; i < 4; i++) {
     var randomNum = Math.floor(Math.random() * 11) + 1;
-    console.log(randomNum);
     var crystal= $("<div>");
         crystal.attr({
             "class": 'crystalImg',
@@ -31,23 +29,19 @@ $(document).on('click', ".crystalImg", function() {
     lastNum += num;
 
     $("#lastNum").html(lastNum);
-    console.log("lastNum");
     
     if(lastNum > randomResult) {
-        losses--;
-        $("#losses").html(losses);
+        losses++;
+        $("#losses").html("Losses: " + losses);
         lastNum = 0;
-        $("#lastNum").html(lastNum);
         resetGame();
     }
     else if (lastNum === randomResult) {
         wins++;
-        $("#wins").html(wins);
-        $("#lastNum").html(lastNum);
+        $("#wins").html("Wins: " + wins);
         lastNum = 0;
         resetGame();
     }
-    console.log(lastNum);
 
 });
 
