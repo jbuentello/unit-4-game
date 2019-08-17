@@ -1,20 +1,14 @@
-body {
-    background-image: url("../images/miner.jpg");
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 100%;
+
+.crystals{
+    display: flex;
+    justify-content: space-around;
+    background-origin: 1px solid red;
+    align items center
 }
 
- #MainWindow {
-    position: fixed; 
-    /* background-color: black; */
-    /* border: 5px solid black; */
-    margin-right: 60%;
-    height: 700px;
-    padding: 15px;
-
-}
-
-.header {
-    margin-right: 60%;
+.crystalImg {
+    float: left;
+    width: 75px;
+    height: 75px;
+    border: 5px solid black;
 }
